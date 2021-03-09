@@ -1,12 +1,18 @@
 ﻿using System;
-
-namespace Exceptions_3_2
+class Solution
 {
-    class Program
+
+    static void Main(String[] args)
     {
-        static void Main(string[] args)
+        string S = Console.ReadLine();
+
+        try
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(Convert.ToInt32(S));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Bad String");
         }
     }
 }
