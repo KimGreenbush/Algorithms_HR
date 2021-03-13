@@ -1,27 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 class Solution
 {
     static void Main(String[] args)
     {
-        string[] words = args;
-        string word = Console.ReadLine();
-        string FirstHalf = "";
-        string SecHalf = "";
-        int i = 0;
-        while (i < word.Length)
+        int numOfWords = Convert.ToInt32(Console.ReadLine());
+        for (int i = 0; i < numOfWords; i++)
         {
-            if (i % 2 == 0)
+            string word = Console.ReadLine();
+            string FirstHalf = "";
+            string SecHalf = "";
+            int j = 0;
+            while (j < word.Length)
             {
-                FirstHalf += word[i];
+                if (j % 2 == 0)
+                {
+                    FirstHalf += word[j];
+                }
+                else
+                {
+                    SecHalf += word[j];
+                }
+                j++;
             }
-            else
-            {
-                SecHalf += word[i];
-            }
-            i++;
+            Console.WriteLine($"{FirstHalf} {SecHalf}");
         }
-        Console.WriteLine($"{FirstHalf} {SecHalf}");
     }
 }
