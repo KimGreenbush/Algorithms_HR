@@ -15,10 +15,10 @@ class Solution
             PhoneBook.Add(arr[0], arr[1]);
         }
 
-        for (int j = 0; j < n; j++)
-        {
-            string Query = Console.ReadLine();
+        String Query;
 
+        while ((Query = Console.ReadLine()) != null)
+        {
             if (PhoneBook.ContainsKey(Query))
             {
                 Console.WriteLine($"{Query}={PhoneBook[Query]}");
