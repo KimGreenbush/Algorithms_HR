@@ -20,18 +20,23 @@ class Solution
         {
             return head;
         }
-        else{
+        else
+        {
             Node runner = head;
             while (runner.next != null)
             {
-                if (runner.data == runner.next.data)
+                while (runner.data == runner.next.data)
                 {
                     runner.next = runner.next.next;
+                    if (runner.next == null)
+                    {
+                        return head;
+                    }
                 }
+                runner = runner.next;
             }
+            return head;
         }
-        return head;
-
     }
 
     public static Node insert(Node head, int data)
