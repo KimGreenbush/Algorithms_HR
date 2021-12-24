@@ -1,3 +1,3 @@
-# Algorythms
+# Algorithms
 
 A collection of algo exercises
