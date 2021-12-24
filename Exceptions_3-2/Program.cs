@@ -12,7 +12,7 @@ class Solution
         }
         catch (Exception e)
         {
-            Console.WriteLine("Bad String");
+            Console.WriteLine($"Bad String, {e}");
         }
     }
 }
