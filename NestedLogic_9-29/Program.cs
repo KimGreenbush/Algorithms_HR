@@ -17,25 +17,43 @@ class Solution
         return newArray;
     };
 
+    static int CalculateFine(int[] returnDate, int[] dueDate)
+    {
+        int fine = 0;
+
+        if (returnDate[2] < dueDate[2])
+        {
+            return fine;
+        }
+        else if (returnDate[2] > dueDate[2])
+        {
+            fine = 10000;
+        }
+        else if (returnDate[1] > dueDate[1])
+        {
+            fine = 500 * (returnDate[1] - dueDate[1]);
+        }
+        else if (returnDate[0] > dueDate[0])
+        {
+            fine = 15 * (returnDate[0] - dueDate[0]);
+        }
+
+        return fine;
+    }
+
     static void Main(String[] args)
     {
-        string[] returnedDate = Console.ReadLine().Split(" ");
-        string[] dueDate = Console.ReadLine().Split(" ");
+        string[] returnedDate = Console.ReadLine().Split(' ');
+        string[] dueDate = Console.ReadLine().Split(' ');
 
-        int[] intDate = ConvertToIntArray(returnedDate);
+        int[] intReturnedDate = ConvertToIntArray(returnedDate);
+        int[] intDueDate = ConvertToIntArray(dueDate);
 
         //code
 
-        // is it late?
-        // no,  return date <= due date
-        // yes, return date > due date
+        int libraryFine = CalculateFine(intReturnedDate, intDueDate);
 
-        // not late no fine! fine = 0
-
-        // late, calculate fine
-        // days, 15 hackos * days
-        // months, 500 hackos * month
-        // years, 10000 hackos fixed
+        Console.WriteLine(libraryFine);
 
     }
 }
