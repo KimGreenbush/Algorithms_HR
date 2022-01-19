@@ -13,12 +13,12 @@ class Solution
             int j = 2;
             bool prime = true;
 
-            if (n <= 1)
+            if (n < j)
             {
                 prime = false;
             }
 
-            while (j*j > n)
+            while (j*j <= n)
             {
                 if (n%j == 0)
                 {
@@ -28,7 +28,7 @@ class Solution
                 j++;
             }
 
-            if (prime == true)
+            if (prime)
             {
                 Console.WriteLine("Prime");
             }
