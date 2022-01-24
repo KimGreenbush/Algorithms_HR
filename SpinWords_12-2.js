@@ -27,4 +27,4 @@ function spinWords(sentence) {
 	return backwards
 }
 
-console.log(spinWords("Hey fellow warriors"))
+console.log(spinWords("Hey fellow warrior gal"))
